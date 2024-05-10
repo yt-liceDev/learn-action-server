@@ -30,7 +30,7 @@ export async function addMeet(prevState: any, formData: FormData) {
       },
     })
 
-    revalidatePath("/")
+    revalidatePath("/", "layout")
 
     return {
       type: "success" as const,

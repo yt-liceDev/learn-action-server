@@ -21,24 +21,24 @@ export default async function Home() {
       },
     })
 
-    revalidatePath("/")
+    revalidatePath("/", "layout")
   }
 
   return (
-    <main className="container py-8">
-      <section className="flex justify-center">
-        <Card className="w-full md:w-[60vw]">
+    <main className='container py-8'>
+      <section className='flex justify-center'>
+        <Card className='w-full md:w-[60vw]'>
           <CardHeader>
-            <CardTitle className="text-center">Add Event</CardTitle>
+            <CardTitle className='text-center'>Add Event</CardTitle>
           </CardHeader>
           <CardContent>
             <AddForm />
           </CardContent>
         </Card>
       </section>
-      <section className="mt-20">
-        <h1 className="font-bold text-xl mb-8">List Events</h1>
-        <div className="grid grid-cols-[repeat(auto-fill,minmax(300px,1fr))] gap-4">
+      <section className='mt-20'>
+        <h1 className='font-bold text-xl mb-8'>List Events</h1>
+        <div className='grid grid-cols-[repeat(auto-fill,minmax(300px,1fr))] gap-4'>
           {data?.map((meet) => (
             <Card key={meet.id}>
               <CardHeader>
@@ -48,9 +48,9 @@ export default async function Home() {
               <CardContent>
                 <p>{meet.description}</p>
               </CardContent>
-              <CardFooter className="flex justify-end">
+              <CardFooter className='flex justify-end'>
                 <form action={actionDel}>
-                  <input type="hidden" name="meetId" value={meet.id} />
+                  <input type='hidden' name='meetId' value={meet.id} />
                   <Button>Delete</Button>
                 </form>
               </CardFooter>
